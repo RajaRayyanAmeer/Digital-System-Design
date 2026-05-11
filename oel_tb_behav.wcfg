@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="oel_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="oel_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="260000001fs"></ZoomEndTime>
+      <Cursor1Time time="175360000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="100"></NameColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/oel_tb/Serial_In" type="logic">
+      <obj_property name="ElementShortName">Serial_In</obj_property>
+      <obj_property name="ObjectShortName">Serial_In</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Rst" type="logic">
+      <obj_property name="ElementShortName">Rst</obj_property>
+      <obj_property name="ObjectShortName">Rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Key" type="array">
+      <obj_property name="ElementShortName">Key[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Key[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Parallel_Data" type="array">
+      <obj_property name="ElementShortName">Parallel_Data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Parallel_Data[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Parity_Bit" type="logic">
+      <obj_property name="ElementShortName">Parity_Bit</obj_property>
+      <obj_property name="ObjectShortName">Parity_Bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/Match" type="logic">
+      <obj_property name="ElementShortName">Match</obj_property>
+      <obj_property name="ObjectShortName">Match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/oel_tb/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>

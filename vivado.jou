@@ -1,0 +1,114 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Apr 29 10:07:16 2026
+# Process ID: 8140
+# Current directory: F:/DSD Labs/Lab 10/task_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12284 F:\DSD Labs\Lab 10\task_1\task_1.xpr
+# Log file: F:/DSD Labs/Lab 10/task_1/vivado.log
+# Journal file: F:/DSD Labs/Lab 10/task_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {F:/DSD Labs/Lab 10/task_1/task_1.xpr}
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+source tb_rom_16.tcl
+save_wave_config {F:/DSD Labs/Lab 10/task_1/tb_rom_16_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{F:/DSD Labs/Lab 10/task_1/tb_rom_16_behav.wcfg}}
+set_property xsim.view {{F:/DSD Labs/Lab 10/task_1/tb_rom_16_behav.wcfg}} [get_filesets sim_1]
+close_sim
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {F:/DSD Labs/Lab 10/task_1/task_1.runs/impl_1/top_rom_display.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {F:/DSD Labs/Lab 10/task_1/task_1.runs/impl_1/top_rom_display.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw
+close_design
+close_project
+create_project task2 {F:/DSD Labs/Lab 10/task2} -part xc7a100tcsg324-3
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new
+file mkdir {F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new}
+close [ open {F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new/task2.v} w ]
+add_files {{F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new/task2.v}}
+update_compile_order -fileset sources_1
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new
+file mkdir {F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new}
+close [ open {F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new/task2_tb.v} w ]
+add_files -fileset sim_1 {{F:/DSD Labs/Lab 10/task2/task2.srcs/sim_1/new/task2_tb.v}}
+update_compile_order -fileset sim_1
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new
+file mkdir F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1
+file mkdir {F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new}
+close [ open {F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new/task2.xdc} w ]
+add_files -fileset constrs_1 {{F:/DSD Labs/Lab 10/task2/task2.srcs/constrs_1/new/task2.xdc}}
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_0 -dir {f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip}
+set_property -dict [list CONFIG.Write_Width_A {16} CONFIG.Write_Depth_A {8} CONFIG.Read_Width_A {8} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {16} CONFIG.Read_Width_B {16}] [get_ips blk_mem_gen_0]
+generate_target {instantiation_template} [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}]
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}]
+launch_runs  blk_mem_gen_0_synth_1
+export_simulation -of_objects [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci}}] -directory {F:/DSD Labs/Lab 10/task2/task2.ip_user_files/sim_scripts} -ip_user_files_dir {F:/DSD Labs/Lab 10/task2/task2.ip_user_files} -ipstatic_source_dir {F:/DSD Labs/Lab 10/task2/task2.ip_user_files/ipstatic} -lib_map_path [list {modelsim=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/modelsim} {questa=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/questa} {riviera=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/riviera} {activehdl=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_1 -dir {f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip}
+set_property -dict [list CONFIG.Load_Init_File {true} CONFIG.Coe_File {f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/ram_init2.coe} CONFIG.Fill_Remaining_Memory_Locations {false}] [get_ips blk_mem_gen_1]
+generate_target {instantiation_template} [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_1] }
+export_ip_user_files -of_objects [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}]
+launch_runs  blk_mem_gen_1_synth_1
+export_simulation -of_objects [get_files {{f:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}}] -directory {F:/DSD Labs/Lab 10/task2/task2.ip_user_files/sim_scripts} -ip_user_files_dir {F:/DSD Labs/Lab 10/task2/task2.ip_user_files} -ipstatic_source_dir {F:/DSD Labs/Lab 10/task2/task2.ip_user_files/ipstatic} -lib_map_path [list {modelsim=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/modelsim} {questa=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/questa} {riviera=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/riviera} {activehdl=F:/DSD Labs/Lab 10/task2/task2.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close [ open {F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new/seg_display.v} w ]
+add_files {{F:/DSD Labs/Lab 10/task2/task2.srcs/sources_1/new/seg_display.v}}
+update_compile_order -fileset sources_1
+launch_runs synth_1
+wait_on_run synth_1
+synth_design -rtl -name rtl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
